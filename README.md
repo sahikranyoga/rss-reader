@@ -1,5 +1,5 @@
 # RSS Reader or Parser
- This is a Java library to read RSS feed from a file and makes the data extraction easier from an RSS 2.0.0 and later. This utilizes Java Stream API and retrieves java Stream by reading an input RSS file stream.
+ A simple RSS reader that reads an input stream of an RSS xml file and returns Collection stream. A Java library to read RSS feed from a file and makes the data extraction easier. Supports RSS or Atom Feed 2.0.0 and later. This utilizes Java Stream API and retrieves java Stream by reading an input RSS file stream.
 
  This library accepts an input file stream of an RSS feed allowing developers choose any available option to read an external web URL in order to provide an input stream. 
  For example, libraries such as Apache HttpClient can be used to read a web URL that provides an RSS feed.
