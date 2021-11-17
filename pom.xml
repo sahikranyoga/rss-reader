@@ -4,11 +4,6 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.sahikran</groupId>
-  <artifactId>rss-reader</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>rss-reader</name>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
@@ -18,11 +13,17 @@
     <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
     <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+    <maven-release-plugin.version>3.0.0-M4</maven-release-plugin.version>
     <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
     <maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
+
+  <groupId>com.sahikran</groupId>
+  <artifactId>rss-reader</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <name>rss-reader</name>
 
   <dependencies>
     <dependency>

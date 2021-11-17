@@ -18,8 +18,26 @@ List<Item> feedItems = rssFeed.filter(i -> i.getTitle().equals(Optional.of("yoga
 Download [the latest JAR][1] or grab via [Maven][2] or [Gradle][3].
 
 ### Maven setup
+Add the following dependency
+```xml
+<dependency>
+    <groupId>com.sahikran</groupId>
+    <artifactId>rss-reader</artifactId>
+    <version>1.0</version>
+</dependency>
+```
 
 ### Gradle setup
+
+### Source build steps
+ 1. Build using maven
+ ```
+ mvn versions:set -DnewVersion=1.0
+ mvn clean install
+ ```
+ 2. Install the jar into local maven repo
+ mvn install:install-file -Dfile=target/rss-reader-1.0.jar -DgroupId=com.sahikran -DartifactId=rss-reader -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
+ ```
 
 ## License
 
