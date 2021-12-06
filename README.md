@@ -36,6 +36,7 @@ Add the following dependency
  mvn clean install
  ```
  2. Install the jar into local maven repo
+ ```
  mvn install:install-file -Dfile=target/rss-reader-1.0.jar -DgroupId=com.sahikran -DartifactId=rss-reader -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
  ```
 
