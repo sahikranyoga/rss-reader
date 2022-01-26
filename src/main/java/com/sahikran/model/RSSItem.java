@@ -138,16 +138,20 @@ public final class RSSItem implements Comparable<RSSItem> {
         }
 
         public Builder addPublishedDate(String dateFieldValue){
+            System.out.println(dateFieldValue);
             if(dateFieldValue.isEmpty()){
                 return this;
             }
             Objects.requireNonNull(dateFieldValue, "input date field value can not be null");
-            DateTimeFormatter optionaDateTimeFormatter = DateTimeFormatter.ofPattern("[EEE,dd MMM yyyy][dd MMM yyyy][EEE, dd MMM yyyy HH:mm:ss Z]");
+            dateFieldValue = dateFieldValue.length() >= 16 ? dateFieldValue.substring(0, 16) : dateFieldValue;
+            //DateTimeFormatter optionaDateTimeFormatter = DateTimeFormatter.ofPattern("[EEE, dd MMM yyyy][EEE,dd MMM yyyy][dd MMM yyyy][E, dd MMM yyyy HH:mm:ss Z]");
+            DateTimeFormatter optionaDateTimeFormatter = DateTimeFormatter.ofPattern("[E, d MMM yyyy][E,d MMM yyyy]", Locale.US);
             DateTimeFormatter dateTimeFormatter = new DateTimeFormatterBuilder()
                                         .parseCaseInsensitive()
                                         .appendOptional(optionaDateTimeFormatter)
-                                        .toFormatter(Locale.getDefault());
-            this.publishedDate = LocalDate.parse(dateFieldValue, dateTimeFormatter);
+                                        .toFormatter(Locale.US);
+                                    
+            this.publishedDate = LocalDate.parse(dateFieldValue.trim(), dateTimeFormatter);
             return this;
         }
 
@@ -162,7 +166,9 @@ public final class RSSItem implements Comparable<RSSItem> {
             setGuid(item.getGuid());
             setLink(item.getLink());
             addPublishedDate(item.getPubDate());
-            creators.addAll(item.getCreator());
+            if(item.getCreator() != null){
+                creators.addAll(item.getCreator());
+            }
             return this;
         }
 

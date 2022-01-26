@@ -82,7 +82,8 @@ public class RssItemIteratorTest {
     private static List<Arguments> provideMutlipleFileInputs(){
         return Arrays.asList(
           Arguments.of(getInputFile("double-rss-item.xml").getAbsolutePath(), 3),
-          Arguments.of(getInputFile("rss-complex.xml").getAbsolutePath(), 13)  
+          Arguments.of(getInputFile("rss-complex.xml").getAbsolutePath(), 13),
+          Arguments.of(getInputFile("pubmed-complex.xml").getAbsolutePath(), 100)
         );
     }
 
